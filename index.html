@@ -1,0 +1,247 @@
+<title>Las 10 Fracturas de la Educación</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Concepto: el boletín de notas del sector educativo — hoja de cuaderno, tinta azul y corrección en rojo */
+:root{
+  --paper:#FBFAF6; --card:#FFFFFF; --ink:#1B2433; --muted:#5B6476; --rule:#DDE3EE;
+  --blue:#2346A8; --blue-soft:#E7ECF8; --red:#C2362B; --red-soft:#FBE9E6; --green:#2E7D4F; --green-soft:#E4F2EA;
+  --f-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --f-body:"Source Serif 4",Georgia,serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11151D; --card:#181E29; --ink:#E8ECF3; --muted:#A3ACBD; --rule:#2A3242;
+  --blue:#8FA9F0; --blue-soft:#1F2A45; --red:#F0877C; --red-soft:#3A1F1E; --green:#7CC79C; --green-soft:#1B3125; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11151D; --card:#181E29; --ink:#E8ECF3; --muted:#A3ACBD; --rule:#2A3242;
+  --blue:#8FA9F0; --blue-soft:#1F2A45; --red:#F0877C; --red-soft:#3A1F1E; --green:#7CC79C; --green-soft:#1B3125; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:17px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 56px;display:flex;flex-direction:column;gap:40px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,7vw,3.2rem);font-weight:800;letter-spacing:-.02em}
+h1 .red{color:var(--red)}
+h2{font-size:1.55rem;font-weight:800}
+h3{font-size:1.1rem;font-weight:600}
+p{margin:0}
+.eyebrow{font:500 .75rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--blue)}
+.lede{color:var(--muted);max-width:62ch}
+.hero{display:flex;flex-direction:column;gap:14px;
+  background-image:repeating-linear-gradient(transparent 0 31px,var(--rule) 31px 32px);
+  padding-block:6px 18px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:560px){.stats{grid-template-columns:1fr}}
+.stat{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:4px}
+.stat b{font:800 1.7rem var(--f-display);color:var(--red);font-variant-numeric:tabular-nums}
+.stat span{font-size:.9rem;color:var(--muted);line-height:1.35}
+.note{background:var(--blue-soft);border-radius:10px;padding:14px 16px;font-size:.95rem}
+.note strong{font-family:var(--f-display)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 .85rem var(--f-display);border:1.5px solid var(--blue);background:transparent;color:var(--blue);
+  border-radius:999px;padding:6px 14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--blue);color:var(--paper)}
+.chip:focus-visible,.f summary:focus-visible,.btn:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.list{display:flex;flex-direction:column;gap:10px}
+.f{background:var(--card);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.f summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;padding:14px}
+.f summary::-webkit-details-marker{display:none}
+.num{font:800 1.2rem var(--f-display);color:var(--red);width:44px;height:44px;border:2px solid var(--red);border-radius:50%;
+  display:grid;place-items:center;transform:rotate(-6deg)}
+.f summary div{min-width:0;display:flex;flex-direction:column;gap:2px}
+.f summary small{font:500 .78rem var(--f-mono);color:var(--muted)}
+.tag{font:500 .7rem var(--f-mono);text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.t-plata{background:var(--red-soft);color:var(--red)}
+.t-estud{background:var(--blue-soft);color:var(--blue)}
+.t-calidad{background:var(--green-soft);color:var(--green)}
+.body{padding:0 16px 18px 70px;display:flex;flex-direction:column;gap:12px}
+@media (max-width:480px){.body{padding-left:16px}}
+.big{font:800 1.45rem var(--f-display);font-variant-numeric:tabular-nums}
+.casa{border-left:3px solid var(--blue);padding-left:12px;font-size:.95rem}
+.casa b{font-family:var(--f-display);color:var(--blue)}
+.bars{display:flex;flex-direction:column;gap:8px}
+.bar{display:flex;flex-direction:column;gap:3px}
+.bar .lbl{display:flex;justify-content:space-between;gap:8px;font:500 .8rem var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.track{height:12px;background:var(--rule);border-radius:6px;overflow:hidden}
+.fill{height:100%;border-radius:6px;background:var(--blue)}
+.fill.red{background:var(--red)}
+.fill.green{background:var(--green)}
+section{display:flex;flex-direction:column;gap:14px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media (max-width:560px){.cards{grid-template-columns:1fr}}
+.box{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.lea{background:var(--green-soft);border:none}
+.lea .letters{font:800 2.2rem var(--f-display);color:var(--green);letter-spacing:.04em}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.contraste{border:1.5px dashed var(--muted);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.copyrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.copyrow code{font:500 .85rem var(--f-mono);background:var(--blue-soft);padding:5px 9px;border-radius:6px;user-select:all;overflow-wrap:anywhere}
+.btn{font:600 .85rem var(--f-display);background:var(--ink);color:var(--paper);border:none;border-radius:8px;padding:8px 14px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.alt{background:var(--green)}
+.peticion{font:400 .92rem/1.55 var(--f-body);background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:12px;white-space:pre-wrap}
+footer{font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--rule);padding-top:18px}
+footer a{color:var(--blue)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);
+  background:var(--ink);color:var(--paper);font:600 .9rem var(--f-display);padding:10px 16px;border-radius:8px}
+@media (prefers-reduced-motion:no-preference){.f[open] .fill{animation:grow .7s ease-out}}
+@keyframes grow{from{width:0}}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Boletín ciudadano · Vibras Positivas HM</span>
+    <h1>Las 10 fracturas de la <span class="red">educación</span> en Colombia</h1>
+    <p class="lede">El diagnóstico que la ministra de Educación, Ilva Myriam Hoyos Castañeda, presentó el 13 de octubre de 2026 ante la Comisión Sexta de la Cámara, explicado en palabras sencillas.</p>
+    <div class="stats">
+      <div class="stat"><b>1.587.248</b><span>niños y jóvenes de 5 a 16 años sin colegio (1 de cada 6)</span></div>
+      <div class="stat"><b>−421.142</b><span>estudiantes menos matriculados que en 2025</span></div>
+      <div class="stat"><b>$4,50 bill.</b><span>falta para la salud de los maestros (FOMAG)</span></div>
+    </div>
+    <p class="note"><strong>Ojo:</strong> estas cifras son el diagnóstico del Gobierno actual sobre lo que recibió del gobierno anterior. Abajo hay un espacio para contrastar y preguntar.</p>
+  </header>
+
+  <section aria-labelledby="h-fr">
+    <h2 id="h-fr">Las diez fracturas</h2>
+    <p class="lede">Toque cada una para ver la cifra y qué significa para su familia.</p>
+    <div class="filters" role="group" aria-label="Filtrar por tema">
+      <button class="chip" id="c-all" data-f="all" aria-pressed="true">Todas</button>
+      <button class="chip" id="c-plata" data-f="plata" aria-pressed="false">Plata</button>
+      <button class="chip" id="c-estud" data-f="estud" aria-pressed="false">Estudiantes</button>
+      <button class="chip" id="c-calidad" data-f="calidad" aria-pressed="false">Calidad</button>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section aria-labelledby="h-sol">
+    <h2 id="h-sol">Lo que propone el Gobierno</h2>
+    <div class="cards">
+      <div class="box lea">
+        <span class="letters">L·E·A</span>
+        <h3>Proyecto Leer, Escribir y Amar</h3>
+        <p>Apuesta del Ministerio, dentro de Patria Milagro, por la formación integral y una educación que impulse el desarrollo de cada persona.</p>
+      </div>
+      <div class="box">
+        <h3>Transparencia y control</h3>
+        <ul>
+          <li>Proyecto de transparencia educativa para vigilar contratos y recursos.</li>
+          <li>Mesas técnicas con el Congreso.</li>
+          <li>Seguimiento a las obras de colegios.</li>
+          <li>Mecanismos de participación ciudadana.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lede">Hasta hoy el anuncio no trae metas con números ni fechas. Eso es lo que toca pedir.</p>
+  </section>
+
+  <section class="contraste" aria-labelledby="h-con">
+    <h2 id="h-con">Para contrastar</h2>
+    <ul>
+      <li>El diagnóstico lo presentó el Gobierno de Abelardo de la Espriella sobre el gobierno de Gustavo Petro, en un debate de empalme. Es la versión de una de las partes.</li>
+      <li>El mismo Ministerio dice que la caída de matrícula ocurrió sin un diagnóstico de las causas. Influyen la natalidad, la migración y el terremoto del 10 de agosto.</li>
+      <li>La designación de la ministra fue criticada por la oposición (Pacto Histórico) por su trayectoria en la Procuraduría de Alejandro Ordóñez.</li>
+      <li>Vale la pena escuchar la respuesta de FECODE, del exministro y de los congresistas de la Comisión Sexta antes de sacar conclusiones.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="h-acc">
+    <h2 id="h-acc">Haga control ciudadano</h2>
+    <p>Cualquier persona puede pedir información al Ministerio con un derecho de petición. Copie este modelo y envíelo.</p>
+    <div class="peticion" id="pet">Señores Ministerio de Educación Nacional:
+
+En ejercicio del derecho de petición (art. 23 de la Constitución y Ley 1755 de 2015), solicito:
+1. El plan con metas y fechas para cerrar el déficit de $4,50 billones del FOMAG.
+2. Cuántos niños de mi municipio están por fuera del sistema educativo y qué se hará con ellos.
+3. El cronograma del Proyecto LEA y cuánto presupuesto tiene asignado.
+4. La lista de obras de colegios atrasadas en mi departamento.
+
+Nombre:
+Cédula:
+Municipio:
+Correo:</div>
+    <div class="copyrow">
+      <button class="btn" id="copy-pet">Copiar petición</button>
+    </div>
+    <div class="box">
+      <h3>Dónde enviarla</h3>
+      <div class="copyrow"><span>Correo anticorrupción:</span><code id="mail">soytransparente@mineducacion.gov.co</code><button class="btn" id="copy-mail">Copiar</button></div>
+      <div class="copyrow"><span>Línea gratuita:</span><code>018000 910122</code></div>
+      <div class="copyrow"><a class="btn alt" href="https://www.mineducacion.gov.co/portal/atencion-al-ciudadano/PQRSDF/324533:Mecanismo-de-presentacion-directa-de-solicitudes-quejas-y-reclamos" target="_blank" rel="noopener">Formulario PQRSDF del Ministerio</a></div>
+    </div>
+    <div class="copyrow">
+      <a class="btn alt" id="wa" href="https://api.whatsapp.com/send?text=Las%2010%20fracturas%20de%20la%20educaci%C3%B3n%20en%20Colombia%2C%20explicadas%20f%C3%A1cil" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Fuentes: <a href="https://www.mineducacion.gov.co/1759/w3-article-431127.html" target="_blank" rel="noopener">Comunicado del Ministerio de Educación (13 oct 2026)</a> · <a href="https://www.portafolio.co/economia/gobierno/educacion-arrastra-13-1-billones-en-vigencias-futuras-sin-respaldo-fiscal-revela-el-diagnostico-de-empalme-504425" target="_blank" rel="noopener">Portafolio</a> · <a href="https://www.bluradio.com/nacion/matricula-escolar-cayo-4-5-durante-el-gobierno-petro-advierte-ministra-de-educacion-rg10" target="_blank" rel="noopener">Blu Radio</a></p>
+    <p>Hecho por Vibras Positivas HM · Caucasia, Antioquia · Actualizado el 20 de octubre de 2026 (hora Colombia).</p>
+  </footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const F=[
+ {t:"plata",tg:"Plata",n:"Salud de los maestros",s:"FOMAG",big:"Déficit de $4,50 billones",
+  d:"El FOMAG atiende la salud de 837.275 docentes, pensionados y sus familias. Necesita $8,44 billones y tiene $3,94 billones. La Supersalud hizo 38 hallazgos y hubo 97.105 tutelas hasta julio de 2026.",
+  c:"Si su hijo tiene un profe enfermo sin atención, pierde clases. Maestros mal atendidos enseñan peor.",
+  b:[["Disponible",3.94,8.44,"$3,94 bill. de $8,44 bill.","red"]]},
+ {t:"calidad",tg:"Calidad",n:"Metas del Plan de Desarrollo sin cumplir",s:"17 de 23 indicadores",big:"17 de 23 metas por debajo",
+  d:"Solo se alfabetizó a 193.134 de las 795.868 personas previstas (24%). La cobertura en educación media llegó a 49,95% frente a una meta de 65%.",
+  c:"Hay adultos en su barrio que siguen sin saber leer, y la mitad de los jóvenes no termina el bachillerato.",
+  b:[["Alfabetización lograda",193134,795868,"24%",""],["Cobertura media vs meta 65%",49.95,65,"49,95%",""]]},
+ {t:"estud",tg:"Estudiantes",n:"Matrícula en caída",s:"mayo 2026 vs 2025",big:"421.142 estudiantes menos (−4,5%)",
+  d:"A mayo de 2026 hay 421.142 estudiantes menos que en 2025, sin un diagnóstico oficial de las causas.",
+  c:"Pregunte en el colegio de su vereda cuántos cupos quedaron vacíos y por qué.",b:[]},
+ {t:"plata",tg:"Plata",n:"Obras atrasadas y compromisos sin plata",s:"ambientes educativos · CONPES 4181",big:"$13,1 billones sin respaldo",
+  d:"De 19.500 ambientes educativos prometidos se habían entregado 11.341 a julio de 2026. El CONPES 4181 de 2026 dejó vigencias futuras por $13,1 billones sin respaldo fiscal y sin contratar.",
+  c:"El salón nuevo que prometieron en su municipio puede estar en esa lista de obras pendientes.",
+  b:[["Ambientes entregados",11341,19500,"11.341 de 19.500",""]]},
+ {t:"plata",tg:"Plata",n:"Educación superior sin caja",s:"gratuidad · ICETEX",big:"Faltan $60.797 millones para 2026",
+  d:"La gratuidad universitaria necesita $245.797 millones más para cerrar 2026; el Gobierno dice haber asegurado $185.000 millones. Para 2027 el ICETEX requiere $1,99 billones y tiene $467.621 millones. Había 9.000 convalidaciones represadas y $890.000 millones en riesgo en 114 obras universitarias demoradas.",
+  c:"Si su hijo va a estudiar en la universidad pública gratis o con crédito ICETEX en 2027, esto lo afecta directamente.",
+  b:[["Gratuidad 2026 asegurada",185000,245797,"$185.000 de $245.797 millones","green"],["ICETEX 2027 asignado",467621,1990000,"$0,47 de $1,99 billones","red"]]},
+ {t:"estud",tg:"Estudiantes",n:"Territorios en riesgo educativo",s:"entidades territoriales",big:"20 territorios en riesgo muy alto",
+  d:"20 entidades territoriales tienen riesgo muy alto en acceso, permanencia, desempeño y atención al contexto.",
+  c:"Vale la pena pedir la lista para saber si Antioquia, Córdoba o Sucre están en ella.",b:[]},
+ {t:"calidad",tg:"Calidad",n:"Pruebas Saber sin datos recientes",s:"Saber 11 · ruralidad",big:"49,51% de colegios rurales en categoría D",
+  d:"El último dato consolidado de pruebas Saber en primaria y secundaria es de 2023. En el campo, casi la mitad de los colegios oficiales está en la categoría D de Saber 11, la más baja.",
+  c:"Sin medición no se sabe si los niños aprenden. En el campo la calidad es la más baja del país.",
+  b:[["Colegios rurales oficiales en categoría D",49.51,100,"49,51%","red"]]},
+ {t:"estud",tg:"Estudiantes",n:"Baja en cobertura",s:"cobertura neta 2022 → 2025",big:"−3,2 puntos",
+  d:"La cobertura neta escolar bajó de 86,8% en 2022 a 83,6% en 2025.",
+  c:"Menos niños de la edad correcta están en el curso que les corresponde.",
+  b:[["2022",86.8,100,"86,8%",""],["2025",83.6,100,"83,6%","red"]]},
+ {t:"estud",tg:"Estudiantes",n:"Brecha entre campo y ciudad",s:"cobertura bruta",big:"20,8 puntos de diferencia",
+  d:"La cobertura bruta llega a 98,5% en zonas urbanas y a 77,7% en zonas rurales.",
+  c:"Para el Bajo Cauca, con tantas veredas, esta es tal vez la fractura que más pesa.",
+  b:[["Urbana",98.5,100,"98,5%",""],["Rural",77.7,100,"77,7%","red"]]},
+ {t:"estud",tg:"Estudiantes",n:"Niños y jóvenes por fuera del sistema",s:"5 a 16 años · 2025",big:"1.587.248 sin matricular",
+  d:"En 2025, 1.587.248 personas entre 5 y 16 años no estaban matriculadas: el 16,2% de esa población, más o menos uno de cada seis.",
+  c:"Si en su cuadra hay 6 niños, en promedio uno no está estudiando.",
+  b:[["Por fuera del sistema",16.2,100,"16,2%","red"]]}
+];
+const list=document.getElementById("list");
+const cls={plata:"t-plata",estud:"t-estud",calidad:"t-calidad"};
+list.innerHTML=F.map((f,i)=>`<details class="f" data-t="${f.t}" id="fr-${i+1}">
+ <summary><span class="num">${i+1}</span><div><h3>${f.n}</h3><small>${f.s}</small></div><span class="tag ${cls[f.t]}">${f.tg}</span></summary>
+ <div class="body"><p class="big">${f.big}</p><p>${f.d}</p>
+ ${f.b.length?`<div class="bars">${f.b.map(b=>`<div class="bar"><div class="lbl"><span>${b[0]}</span><span>${b[3]}</span></div><div class="track"><div class="fill ${b[4]}" style="width:${Math.min(100,b[1]/b[2]*100).toFixed(1)}%"></div></div></div>`).join("")}</div>`:""}
+ <p class="casa"><b>En su casa:</b> ${f.c}</p></div></details>`).join("");
+list.querySelector("details").open=true;
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c));
+  const v=c.dataset.f;
+  list.querySelectorAll(".f").forEach(d=>d.hidden=!(v==="all"||d.dataset.t===v));
+}));
+const toast=document.getElementById("toast");
+function say(m){toast.textContent=m;toast.hidden=false;clearTimeout(say.t);say.t=setTimeout(()=>toast.hidden=true,1800)}
+function copy(txt,el){
+  navigator.clipboard.writeText(txt).then(()=>say("Copiado")).catch(()=>{
+    const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);say("Texto seleccionado: cópielo");
+  });
+}
+document.getElementById("copy-pet").addEventListener("click",()=>{const e=document.getElementById("pet");copy(e.textContent,e)});
+document.getElementById("copy-mail").addEventListener("click",()=>{const e=document.getElementById("mail");copy(e.textContent,e)});
+</script>
